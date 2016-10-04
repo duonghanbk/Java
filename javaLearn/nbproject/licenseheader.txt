@@ -1,0 +1,9 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Tap tanh lam quen voi Java
+${licensePrefix}Created by Duong Han
+ ${licensePrefix} CN-CNTT3
+<#if licenseLast??>
+${licenseLast}
+</#if>

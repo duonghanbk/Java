@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+D:\HOC TAP\Lap trinh\Java\.metadata\.plugins\org.eclipse.jdt.core
+3436557224.index
