@@ -12,7 +12,26 @@ package ctdl;
 public class DoubleLinkedList {
     
     public static void main(String[] args) {
+        DoubleLinkedList linkedList = new DoubleLinkedList();
+        linkedList.addHead(05);
+        linkedList.addHead(12);
+        linkedList.addHead(27);
+        linkedList.addHead(03);
+        linkedList.addHead(19);
         
+//print
+        linkedList.print();
+        System.out.println("-------------------");
+        
+        
+//delete Head Node        
+//        linkedList.deleteHead();
+//        linkedList.print();
+
+//delete tail Node        
+        linkedList.deleteTail();
+        linkedList.print();
+                
     }
     
     
@@ -26,6 +45,7 @@ public class DoubleLinkedList {
             head = newHeadNode3;
         } else{
             newHeadNode3.next = head;
+            head.prev = newHeadNode3;
             head = newHeadNode3;
         }
         mSize++;
@@ -34,6 +54,7 @@ public class DoubleLinkedList {
     //delete head
     public void deleteHead(){
         if(head != null){
+            head.next.prev = null;
             head = head.next;
             mSize--;
         }
@@ -50,7 +71,7 @@ public class DoubleLinkedList {
                tailListNode3 = tailListNode3.next; 
             }
             tailListNode3.next = newTailNode3;
-            
+            newTailNode3.prev = tailListNode3;
         }  
         mSize++;
     }
@@ -97,7 +118,9 @@ public class DoubleLinkedList {
             count++;
         }
         newNode3.next = currentNode3.next;
+        currentNode3.next.prev = newNode3;
         currentNode3.next = newNode3;
+        newNode3.prev = currentNode3;
         mSize--;
         }
         
@@ -119,6 +142,7 @@ public class DoubleLinkedList {
                 currentNode3 = currentNode3.next;
                 count ++;
             }
+            currentNode3.next.next.prev = currentNode3;
             currentNode3.next = currentNode3.next.next;
             }
             
